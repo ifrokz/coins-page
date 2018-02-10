@@ -1,0 +1,28 @@
+import React from 'react';
+import axios from 'axios';
+
+class CoinInfo extends React.Component{
+    state = {
+        __id: this.props.__id
+    }
+
+    componentDidMount(){
+        axios.get(`https://api.coinmarketcap.com/v1/ticker/?${this.state.__id}`)
+        .then(res => {
+            this.setState({...res.data[0]});            
+        });
+    }
+    
+    
+    DailyRewards = () => {
+        return ((120000/44227156883)*7.5*((60*24)/2.55))
+    }
+    
+    render(){
+        return (
+            <div>Hola {this.state.name} // {this.neo()}</div>
+        )
+    }
+}
+
+export default CoinInfo;

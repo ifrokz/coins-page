@@ -1,0 +1,39 @@
+*********************************
+**********Live server ***********
+*********************************
+1) cd C:\Users\dyfro\Desktop\react-course-projects\indecision-app\public
+2) live-server
+
+
+*********************************
+******* babel automatico ********
+*********************************
+1)cd C:\Users\dyfro\Desktop\react-course-projects\indecision-app\
+
+2)
+@ Formato de comando: 
+babel {sourceFile} --out-file={finalFile} --presets={list of dependencies} --watch
+
+@ Codigo ejemplo: 
+babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
+
+
+*********************************
+********* Instalaciones *********
+*********************************
+
+yarn add live-server babel-cli@6.24.1 webpack@3.1.0
+
+
+ @@SI YA esta empezado el proyecto:
+1) Aniadir packaje.json a la carpeta donde se va a trabajar.
+2) Comando: yarn install
+
+con este comando nos instala en la carpeta node_modules todas las dependencias necesarias para el funcionamiento de babel en funcion al archivo de packaje.json
+
+
+
+--------------------------------------------------
+Plugins para Visual Estudio Code:
+  - Babel ES5/ES6
+  - Path Intelisense
