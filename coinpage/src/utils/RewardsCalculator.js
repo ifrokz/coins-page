@@ -1,15 +1,14 @@
 export default ({hashrate, nethash, blockreward, blocktime, poolfee}) => {
-    console.log(blockreward)
-    let minute = (hashrate/nethash)*blockreward*(1/blocktime);
-    minute = minute - (minute * (poolfee/100));
-    const hour = minute * 60;
+
+    let hour = (((hashrate*1000)/nethash) * blockreward) * 60 / (blocktime/60);
+    hour = hour - ( ( hour * poolfee ) / 100 );
+
     const day = hour * 24;
     const week = day * 7;
     const month = day * 30;
     const year = day * 365;
     
     return {
-        minute, 
         hour, 
         day,
         week,

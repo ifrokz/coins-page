@@ -21,7 +21,8 @@ class CoinPage extends Component {
         mining: {
             nethash: undefined,
             difficulty: undefined,
-            blockcount: undefined
+            blockcount: undefined,
+            exchangeRate: undefined
         },
         inputValues: {
 
@@ -33,6 +34,7 @@ class CoinPage extends Component {
         axios.get(`http://localhost/api/mining/${this.props.match.params.name}`)
             .then(function (response) {
                 that.setState({...response.data});
+                console.log(that.state.mining)
             });
     };
 
@@ -90,7 +92,7 @@ class CoinPage extends Component {
                 onSubmit={this.onSubmit}
                 gethashstring={this.createHashString}
             />
-            {this.state.submit && <CoinResult inputValues={this.state.inputValues} rewards={this.getRewards()}/>}
+            {this.state.submit && <CoinResult inputValues={this.state.inputValues} rewards={this.getRewards()} exchangeRate={this.state.mining.exchangeRate} />}
         </div>
     );
 };

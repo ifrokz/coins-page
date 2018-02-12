@@ -15,7 +15,8 @@ class CoinResult extends Component {
             timeText: timeText, 
             estimatedReward: estimatedReward,
             electricityCost: electricityCost,
-            btc_usd_price: this.state.btc_usd_price
+            btc_usd_price: this.state.btc_usd_price,
+            exgangeRate: this.props.exchangeRate
         };
     };
     

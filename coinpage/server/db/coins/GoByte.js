@@ -5,6 +5,7 @@ module.exports = class Coin {
         this.nethash = undefined;
         this.difficulty = undefined;
         this.blockcount = undefined;
+        this.exchangeRate = undefined;
 
         this.data = data;
         this.urls = urls;
@@ -17,12 +18,14 @@ module.exports = class Coin {
         axios.all([
                 axios.get(this.urls.nethash),
                 axios.get(this.urls.difficulty),
-                axios.get(this.urls.blockcount)
+                axios.get(this.urls.blockcount),
+                axios.get(this.urls.exchangeRate)
             ])
-            .then(axios.spread(function (nethash, difficulty, blockcount) {
+            .then(axios.spread(function (nethash, difficulty, blockcount, exchangeRate) {
                 that.nethash = nethash.data;
                 that.difficulty = difficulty.data;
                 that.blockcount = blockcount.data;
+                that.exchangeRate = exchangeRate.data[0].price_btc;
             }));
     };
 
@@ -32,7 +35,8 @@ module.exports = class Coin {
             mining: {
                 nethash: this.nethash,
                 difficulty: this.difficulty,
-                blockcount: this.blockcount
+                blockcount: this.blockcount,
+                exchangeRate: this.exchangeRate
             }
         };
     };
