@@ -31,7 +31,7 @@ class CoinPage extends Component {
 
     componentWillMount () {
         const that = this;
-        axios.get(`http://localhost/api/mining/${this.props.match.params.name}`)
+        axios.get(`http://localhost/api/mining/coin/${this.props.match.params.name}`)
             .then(function (response) {
                 that.setState({...response.data});
                 console.log(that.state.mining)

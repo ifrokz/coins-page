@@ -15,6 +15,9 @@ const Header = (props) => (
                 <li>
                     <NavLink to="/coins-list" activeClassName='active' exact={true}>Coins </NavLink>
                 </li>
+                <li>
+                    <NavLink to="/crypto-calculator" activeClassName='active' exact={true}>Crypto Calculator </NavLink>
+                </li>
             </ul>
         </div>
     </nav>

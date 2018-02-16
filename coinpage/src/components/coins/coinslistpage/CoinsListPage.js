@@ -5,20 +5,22 @@ import CoinsListSelector from '../../../selectors/coins-list';
 import { Link } from "react-router-dom";
 
 class CoinsListPage extends Component {
+    constructor(props){
+        super(props);
+    }
     render = (props) => (
         <div>
             <h2>Lista de monedas disponibles.</h2>
-            {}
             {
-        this.props.coins.map( (coin) => {
-            return (
-                <Link  key={coin.name} to={`/coins-list/${coin.name}`}>
-                    <div>
-                        <p>Name: {coin.name}</p>
-                    </div>
-                </Link>
-            )
-        })
+                this.props.coins.map( (coin) => {
+                    return (
+                        <Link  key={coin} to={`/coins-list/${coin}`}>
+                            <div>
+                                <p>Name: {coin}</p>
+                            </div>
+                        </Link>
+                    );
+                })
             }
         </div>
     );

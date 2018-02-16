@@ -16,7 +16,7 @@ const store = configureStore();
 CoinsDataTest.map( (coin) => {
     store.dispatch(AddCoin(coin))
 });
-
+console.log(store.getState())
 store.dispatch(ChangeLanguage('EN'));
 console.log(store.getState());
 

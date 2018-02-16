@@ -7,8 +7,11 @@ const port = process.env.PORT || 80;
 app.use(express.static(publicPath));
 
 
+app.get('/api/mining/all' , ( req, res) => {
+    console.log('all')
+});
 
-app.get('/api/mining/:coin', (req, res) => {
+app.get('/api/mining/coin/:coin', (req, res) => {
    console.log(CoinsData.getCoinByName(req.params.coin));
    res.json(CoinsData.getCoinByName(req.params.coin));
 });
