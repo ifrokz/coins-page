@@ -4,7 +4,7 @@ export default () => {
             hashrate: 635,
             power: 190
         },
-        NeoScrypt: {
+        neoscrypt: {
             hashrate: 1500,
             power: 210
         },

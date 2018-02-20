@@ -7,10 +7,6 @@ const createGPU = (name, func, type) => {
         amount: 0,
         type: type,
         algorithm: func(), 
-        values: {
-            hashrate: 0,
-            power: 0
-        }
     };
 }
 
@@ -31,7 +27,6 @@ export default  (name) => {
         case 'GTX 780 Ti':
         case 'GTX 750 Ti':
             return createGPU(name, gtx1080, 'nvidia');
-        case 'GTX 1070':
         default:
             console.log('No se ha encontrado la informacion para la ' + name);
             break;
