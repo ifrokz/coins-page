@@ -28,8 +28,10 @@ class CoinPage extends Component {
 
         }
     };
-
+  
     componentWillMount () {
+        document.title = `${this.props.match.params.name} profit calculator`;
+        
         const that = this;
         axios.get(`http://localhost/api/mining/coin/${this.props.match.params.name}`)
             .then(function (response) {
@@ -38,7 +40,12 @@ class CoinPage extends Component {
             });
     };
 
+    componentDidMount(){
+        
+    }
+
     getRewards = () => {
+        
         return RewardCalculator({
             hashrate: this.state.inputValues.hashrate,
             nethash: this.state.mining.nethash,

@@ -8,6 +8,10 @@ class CoinsListPage extends Component {
     constructor(props){
         super(props);
     }
+
+    componentDidMount () {
+        document.title = `Coins List.`;
+    }
     render = (props) => (
         <div>
             <h2>Lista de monedas disponibles.</h2>

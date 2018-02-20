@@ -1,9 +1,15 @@
 import React from 'react';
 
-const HomePage = () => (
-    <div>
-        HomePage
-    </div>
-)
+class HomePage extends React.Component {
+    componentDidMount = () => {
+        document.title = `Home Page.`;
+    }   
+    
+    render = () => (
+        <div>
+            HomePage
+        </div>
+    );
+};
 
 export default HomePage;

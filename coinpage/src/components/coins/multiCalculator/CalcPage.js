@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 import InputGPU from './InputGPU'
 
 class CalcPage extends React.Component {
+    componentDidMount(){
+        document.title = `Crypto Mining Calculator`;
+    }
+
     render = () => (
         <div>
             <InputGPU/>

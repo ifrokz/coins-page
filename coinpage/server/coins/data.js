@@ -24,11 +24,19 @@ module.exports = class Data {
         setTimeout( () => {this.loop()},1000);
     };
 
+    getAllCoinsData () {
+        return this.coins.filter( (coin) => {
+            return true;
+        }).map((coin) => {
+            return coin.getData();
+        });
+    };
+
     loop () {
         
         this.coins.forEach(function (coin) {
             coin.loop();
-            console.log(coin.getData());
+            //console.log(coin.getData());
         });
 
         setTimeout( () => {
